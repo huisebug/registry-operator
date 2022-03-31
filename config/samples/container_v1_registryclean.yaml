@@ -1,0 +1,6 @@
+apiVersion: container.huisebug.org/v1
+kind: RegistryClean
+metadata:
+  name: registryclean-sample
+spec:
+  # TODO(user): Add fields here

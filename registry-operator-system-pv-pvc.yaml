@@ -1,0 +1,49 @@
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: registry-operator-system
+  name: registry-operator-system
+spec:
+  accessModes:
+  - ReadWriteOnce
+  - ReadWriteMany
+  capacity:
+    storage: 1000Gi
+  nfs:
+    path: /registry-operator-system
+    server: 10.240.52.240
+  mountOptions:
+  - vers=4.0
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
+  
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: registry-operator-system
+  name: registry-operator-system
+  namespace: registry-operator-system
+spec:
+  accessModes:
+  - ReadWriteOnce
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1000Gi
+  storageClassName: ""
+  volumeMode: Filesystem
+  volumeName: registry-operator-system
+status:
+  accessModes:
+  - ReadWriteOnce
+  - ReadWriteMany
+  capacity:
+    storage: 1000Gi
+    
+
+    

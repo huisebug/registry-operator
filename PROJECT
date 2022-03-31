@@ -1,0 +1,33 @@
+domain: huisebug.org
+layout:
+- go.kubebuilder.io/v3
+projectName: registry-operator
+repo: github.com/huisebug/registry-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: huisebug.org
+  group: container
+  kind: Registry
+  path: github.com/huisebug/registry-operator/api/v1
+  version: v1
+  webhooks:
+    defaulting: true
+    validation: true
+    webhookVersion: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: huisebug.org
+  group: container
+  kind: RegistryClean
+  path: github.com/huisebug/registry-operator/api/v1
+  version: v1
+  webhooks:
+    defaulting: true
+    validation: true
+    webhookVersion: v1
+version: "3"

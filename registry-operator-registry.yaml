@@ -1,0 +1,16 @@
+apiVersion: container.huisebug.org/v1
+kind: Registry
+metadata:
+  name: registry
+  namespace: registry-operator-system
+spec:
+  image: registry:2
+  nodePort: 32461
+  auth:
+    username: wyfuser
+    password: ujsgYBFMKL11
+  # pvc: registry-operator-system
+  gc: 
+    schedule: "0 2 1/1 * *"
+
+

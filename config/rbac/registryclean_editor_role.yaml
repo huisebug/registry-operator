@@ -1,0 +1,24 @@
+# permissions for end users to edit registrycleans.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: registryclean-editor-role
+rules:
+- apiGroups:
+  - container.huisebug.org
+  resources:
+  - registrycleans
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - container.huisebug.org
+  resources:
+  - registrycleans/status
+  verbs:
+  - get
